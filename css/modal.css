@@ -1,0 +1,112 @@
+:root {
+    --modal-animation-duration: 0.2s;
+}
+
+._modal * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+._modal {
+    position: fixed;
+    z-index: -1000;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 18px;
+    transition: background-color var(--modal-animation-duration);
+}
+
+._modal.modal-open {
+    z-index: 1000;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+._modal.modal-close {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+._modal__window {
+    width: var(--modal-width);
+    margin: 0 auto;
+    padding: 5px 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform: translateY(-100%);
+    transition: transform var(--modal-animation-duration);
+}
+
+._modal.modal-open ._modal__window {
+    transform: translateY(100px);
+}
+
+._modal.modal-close ._modal__window {
+    transform: translateY(-100%);
+}
+
+._modal__window > *:not(:last-child) {
+    margin: 0px 0px 5px 0px;
+    padding: 0px 0px 5px 0px;
+    border-bottom: 1px solid #acacac;
+}
+
+._modal__header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+}
+
+._modal__title {}
+
+._modal__close {
+    cursor: pointer;
+}
+
+._modal__body {}
+
+._modal__body *:not(:last-child) {
+    margin: 0px 0px 10px 0px;
+}
+
+._modal__footer {}
+
+._modal__footer > *:not(:first-child) {
+    margin: 0px 0px 0px 10px;
+}
+
+._modal__footer > button {
+    padding: 1px 5px;
+}
+
+
+/* CARDS */
+
+.cards {}
+.card {
+    float: left;
+    width: 300px;
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 7px 15px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background: rgb(27, 118, 255);
+}
+.btn-danger {
+    background: rgb(195, 29, 29);
+}

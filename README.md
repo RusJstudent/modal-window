@@ -1,0 +1,1 @@
+## Modal window plugin with vanilla JS
